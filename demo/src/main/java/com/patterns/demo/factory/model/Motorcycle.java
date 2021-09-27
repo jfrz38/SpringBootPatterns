@@ -1,21 +1,21 @@
-package com.patterns.demo.factory.impl;
+package com.patterns.demo.factory.model;
 
 import org.springframework.stereotype.Component;
 
 import com.patterns.demo.factory.Vehicle;
 
 @Component
-public class Bus implements Vehicle {
+public class Motorcycle implements Vehicle {
 
-	private int nWheels = 6;
+	private int nWheels = 2;
 	
-	public Bus() {
+	public Motorcycle() {
 		
 	}
 	
 	@Override
 	public String specification() {
-		return "This is the Bus vehicle with "+getnWheels()+" wheels";
+		return "This is the Motorcycle vehicle with "+getnWheels()+" wheels";
 	}
 
 	public int getnWheels() {
@@ -25,10 +25,9 @@ public class Bus implements Vehicle {
 	public void setnWheels(int nWheels) {
 		this.nWheels = nWheels;
 	}
-	
+
 	@Override
 	public String getType() {
-		return "Bus";
+		return "Motorcycle";
 	}
-
 }
