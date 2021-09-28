@@ -11,6 +11,10 @@ import com.patterns.demo.adapter.Basement;
 import com.patterns.demo.adapter.Garage;
 import com.patterns.demo.adapter.model.BasementThing;
 import com.patterns.demo.adapter.model.ToolAdapterImpl;
+import com.patterns.demo.bridge.BicycleBridge;
+import com.patterns.demo.bridge.CarBridge;
+import com.patterns.demo.bridge.Engine;
+import com.patterns.demo.bridge.Pedals;
 import com.patterns.demo.adapter.model.GarageTool;
 import com.patterns.demo.decorator.service.GarageService;
 import com.patterns.demo.factory.Vehicle;
@@ -55,5 +59,18 @@ public class PatternsController {
 				.append(sound.makeSound())
 				.append(" ")
 				.append(sound.makeSound()));
+	}
+	
+	@GetMapping("/bridge")
+	public ResponseEntity<?> bridge(){
+		return ResponseEntity.ok(new StringBuilder()
+				.append(new BicycleBridge(new Pedals()).powerOn())
+				.append(" ")
+				.append(new CarBridge(new Engine()).powerOn())
+				.append(" ")
+				.append(new BicycleBridge(new Engine()).powerOn())
+				.append(" ")
+				.append(new CarBridge(new Pedals()).powerOn())
+				.toString());
 	}
 }
