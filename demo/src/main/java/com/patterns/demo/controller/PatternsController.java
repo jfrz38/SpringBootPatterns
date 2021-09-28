@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.patterns.demo.abstractfactory.model.GenerateAbstractFactory;
 import com.patterns.demo.adapter.Basement;
 import com.patterns.demo.adapter.Garage;
 import com.patterns.demo.adapter.model.BasementThing;
@@ -84,5 +85,13 @@ public class PatternsController {
 	@GetMapping("/prototype")
 	public ResponseEntity<?> prototype(){
 		return ResponseEntity.ok(new GeneratePrototype().generate());
+	}
+	
+	@GetMapping("/abstract-factory")
+	public ResponseEntity<?> abstractFactory(
+			@RequestParam(name="building", defaultValue="stable") String building,
+			@RequestParam(name="unit", defaultValue="1")int type){
+		new GenerateAbstractFactory().generate(building, type);
+		return ResponseEntity.ok().build();
 	}
 }
