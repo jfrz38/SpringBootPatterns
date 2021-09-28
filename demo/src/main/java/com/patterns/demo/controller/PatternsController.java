@@ -7,6 +7,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.patterns.demo.adapter.Basement;
+import com.patterns.demo.adapter.Garage;
+import com.patterns.demo.adapter.model.BasementThing;
+import com.patterns.demo.adapter.model.ToolAdapterImpl;
+import com.patterns.demo.adapter.model.GarageTool;
 import com.patterns.demo.decorator.service.GarageService;
 import com.patterns.demo.factory.Vehicle;
 import com.patterns.demo.factory.VehicleFactoryImplementation;
@@ -19,7 +24,7 @@ public class PatternsController {
 	private GarageService garageService;
 	
 	@GetMapping("/factory")
-	public ResponseEntity<?> factory(@RequestParam(name="vehicle", defaultValue="Car")String vehicle) throws Exception{
+	public ResponseEntity<?> factory(@RequestParam(name="vehicle", defaultValue="Car") String vehicle) throws Exception{
 		Vehicle vehicleFound = VehicleFactoryImplementation.createInstance(vehicle);
 		return ResponseEntity.ok(vehicleFound.specification());
 	}
@@ -27,5 +32,17 @@ public class PatternsController {
 	@GetMapping("/decorator")
 	public ResponseEntity<?> decorator(){
 		return ResponseEntity.ok(garageService.getGarage());
+	}
+	
+	@GetMapping("/adapter")
+	public ResponseEntity<?> adapter(@RequestParam(name="tool", defaultValue = "hammer") String vehicleToAdd){
+        Garage tool = new GarageTool();
+        Basement thing = new BasementThing();
+        Garage thingAdapter = new ToolAdapterImpl(thing);
+        
+		return ResponseEntity.ok(new StringBuilder()
+				.append(tool.addTool(vehicleToAdd))
+				.append(" and ")
+				.append(thingAdapter.addTool(vehicleToAdd)));
 	}
 }
