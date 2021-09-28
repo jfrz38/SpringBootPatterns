@@ -15,6 +15,7 @@ import com.patterns.demo.bridge.BicycleBridge;
 import com.patterns.demo.bridge.CarBridge;
 import com.patterns.demo.bridge.Engine;
 import com.patterns.demo.bridge.Pedals;
+import com.patterns.demo.composite.GenerateComposite;
 import com.patterns.demo.adapter.model.GarageTool;
 import com.patterns.demo.decorator.service.GarageService;
 import com.patterns.demo.factory.Vehicle;
@@ -72,5 +73,11 @@ public class PatternsController {
 				.append(" ")
 				.append(new CarBridge(new Pedals()).powerOn())
 				.toString());
+	}
+	
+	@GetMapping("/composite")
+	public ResponseEntity<?> composite(){
+		System.out.println(new GenerateComposite().createGarage());
+		return ResponseEntity.ok(new GenerateComposite().createGarage());
 	}
 }
