@@ -15,6 +15,8 @@ import com.patterns.demo.adapter.model.GarageTool;
 import com.patterns.demo.decorator.service.GarageService;
 import com.patterns.demo.factory.Vehicle;
 import com.patterns.demo.factory.VehicleFactoryImplementation;
+import com.patterns.demo.proxy.VehicleSound;
+import com.patterns.demo.proxy.model.VehicleSoundImpl;
 
 @RestController
 @RequestMapping("/pattern")
@@ -44,5 +46,14 @@ public class PatternsController {
 				.append(tool.addTool(vehicleToAdd))
 				.append(" and ")
 				.append(thingAdapter.addTool(vehicleToAdd)));
+	}
+	
+	@GetMapping("/proxy")
+	public ResponseEntity<?> proxy(){
+		VehicleSound sound = new VehicleSoundImpl();
+		return ResponseEntity.ok(new StringBuilder()
+				.append(sound.makeSound())
+				.append(" ")
+				.append(sound.makeSound()));
 	}
 }
