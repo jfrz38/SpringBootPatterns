@@ -20,6 +20,7 @@ import com.patterns.demo.adapter.model.GarageTool;
 import com.patterns.demo.decorator.service.GarageService;
 import com.patterns.demo.factory.Vehicle;
 import com.patterns.demo.factory.VehicleFactoryImplementation;
+import com.patterns.demo.prototype.model.GeneratePrototype;
 import com.patterns.demo.proxy.VehicleSound;
 import com.patterns.demo.proxy.model.VehicleSoundImpl;
 
@@ -77,7 +78,11 @@ public class PatternsController {
 	
 	@GetMapping("/composite")
 	public ResponseEntity<?> composite(){
-		System.out.println(new GenerateComposite().createGarage());
 		return ResponseEntity.ok(new GenerateComposite().createGarage());
+	}
+	
+	@GetMapping("/prototype")
+	public ResponseEntity<?> prototype(){
+		return ResponseEntity.ok(new GeneratePrototype().generate());
 	}
 }
