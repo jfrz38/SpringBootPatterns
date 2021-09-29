@@ -16,7 +16,11 @@ public class Bicycle implements Vehicle {
 	
 	@Override
 	public String specification() {
-		return "This is the Bycicle vehicle with "+getnWheels()+" wheels";
+		return new StringBuilder()
+				.append("This is the Bicycle vehicle with ")
+				.append(getnWheels())
+				.append(" wheels")
+				.toString();
 	}
 
 	public int getnWheels() {

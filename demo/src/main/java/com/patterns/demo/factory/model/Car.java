@@ -15,7 +15,11 @@ public class Car implements Vehicle {
 	
 	@Override
 	public String specification() {
-		return "This is the Motorcycle vehicle with "+getnWheels()+" wheels";
+		return new StringBuilder()
+				.append("This is the Car vehicle with ")
+				.append(getnWheels())
+				.append(" wheels")
+				.toString();
 	}
 
 	public int getnWheels() {
