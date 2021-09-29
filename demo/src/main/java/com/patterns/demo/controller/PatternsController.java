@@ -16,10 +16,10 @@ import com.patterns.demo.bridge.BicycleBridge;
 import com.patterns.demo.bridge.CarBridge;
 import com.patterns.demo.bridge.Engine;
 import com.patterns.demo.bridge.Pedals;
+import com.patterns.demo.builder.model.GenerateBuilder;
 import com.patterns.demo.composite.GenerateComposite;
 import com.patterns.demo.adapter.model.GarageTool;
 import com.patterns.demo.decorator.service.GarageService;
-import com.patterns.demo.factory.Vehicle;
 import com.patterns.demo.factory.VehicleFactoryImplementation;
 import com.patterns.demo.prototype.model.GeneratePrototype;
 import com.patterns.demo.proxy.VehicleSound;
@@ -34,8 +34,7 @@ public class PatternsController {
 	
 	@GetMapping("/factory")
 	public ResponseEntity<?> factory(@RequestParam(name="vehicle", defaultValue="Car") String vehicle) throws Exception{
-		Vehicle vehicleFound = VehicleFactoryImplementation.createInstance(vehicle);
-		return ResponseEntity.ok(vehicleFound.specification());
+		return ResponseEntity.ok(VehicleFactoryImplementation.createInstance(vehicle).specification());
 	}
 	
 	@GetMapping("/decorator")
@@ -93,5 +92,10 @@ public class PatternsController {
 			@RequestParam(name="unit", defaultValue="1")int type){
 		new GenerateAbstractFactory().generate(building, type);
 		return ResponseEntity.ok().build();
+	}
+	
+	@GetMapping("/builder")
+	public ResponseEntity<?> builderFactory(){
+		return ResponseEntity.ok(new GenerateBuilder().generate());
 	}
 }
