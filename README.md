@@ -15,7 +15,7 @@ Utilizado para crear objetos complejos.
 Utilizado cuando existen muchos constructores sobrecargados.  
 Una opción es crear un único constructor y llamar a los _setters_ necesarios. Otra usar el patrón Builder.
 
-Ejemplo disponible en [Builder](./main/demo/src/java/com/patterns/demo/builder)
+Ejemplo disponible en [Builder](./demo/src/java/com/patterns/demo/builder)
 
 ### **Factoría**
 
