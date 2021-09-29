@@ -152,7 +152,13 @@ Añade funcionalidad dinámicamente a un objeto.
 
 **Los beneficios son:**
 
+- Permite extender la funcionalidad dinámicamente y estáticamente sin alterar la estructura del objeto existente.
+- Se puede añadir una nueva responsabilidad a un objeto dinámicamente.
+- Utiliza la composición para la relación de objetos para mantener los principios SOLID.
+- Simplifica la codificación al escribir nuevas clases para cada nueva funcionalidad específica en vez de cambiar el código existente.
+
 **Generalmente utilizado para:**
+Extender las funcionalidades de un objeto existente.
 
 ### **Proxy**
 
@@ -161,6 +167,43 @@ Añade una interfaz para controlar las restricciones de acceso a un objeto.
 **Los beneficios son:**
 
 **Generalmente utilizado para:**
+
+### **Facade**
+
+Proporciona una interfaz unificada a un conjunto de interfaces en un subsistema. Facade define una interfaz de alto nivel que hace el subsistema más fácil de utilizar.
+
+Facade no es más que una interfaz de interfaces para simplificar las interacciones entre el cliente y las demás clases.
+
+Facade oculta la complejidad del sistema y proporciona una interfaz al cliente desde la que el propio cliente puede acceder al sistema.
+
+**Los beneficios son:**
+
+- Reduce la complejidad del cliente para interaccionar con los subsistemas.
+- Agrupa todos los servicios en interfaces para hacerlos más entendibles.
+
+**Generalmente utilizado para:**
+Cuando una clase contiene múltiples subclases. Normalmente, cuando se realizan múltiples llamadas a distintos métodos con una misma funcionalidad, se pueden guardar todos ellos tras una "fachada". Por ejemplo, si para una acción como "encender coche" y "apagar coche" requiere hacer:
+
+```java
+// Encender
+deposito.comprobarFuel();
+bateria.comprobarBatería();
+coche.comprobarContacto();
+motor.on();
+aireAcondicionado.comprobarEstado();
+
+// Apagar
+motor.off();
+aireAcondicionado.off();
+sistemaElectrico.off();
+```
+
+Se puede simplificar con un objeto `Facade` que sea:
+
+```java
+facade.encender();
+facade.apagar();
+```
 
 ## **Patrones de diseño de COMPORTAMIENTO**
 
