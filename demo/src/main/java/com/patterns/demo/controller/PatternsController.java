@@ -20,6 +20,7 @@ import com.patterns.demo.builder.model.GenerateBuilder;
 import com.patterns.demo.composite.GenerateComposite;
 import com.patterns.demo.adapter.model.GarageTool;
 import com.patterns.demo.decorator.service.GarageService;
+import com.patterns.demo.facade.model.GenerateFacade;
 import com.patterns.demo.factory.VehicleFactoryImplementation;
 import com.patterns.demo.fluentbuilder.GenerateFluentBuilder;
 import com.patterns.demo.prototype.model.GeneratePrototype;
@@ -109,5 +110,10 @@ public class PatternsController {
 	@GetMapping("/fluent-builder")
 	public ResponseEntity<?> fluentBuilder(){
 		return ResponseEntity.ok(new GenerateFluentBuilder().generate());
+	}
+	
+	@GetMapping("/facade")
+	public ResponseEntity<?> facade(){
+		return ResponseEntity.ok(new GenerateFacade().generate());
 	}
 }
