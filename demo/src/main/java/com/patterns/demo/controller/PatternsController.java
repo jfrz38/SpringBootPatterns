@@ -21,6 +21,7 @@ import com.patterns.demo.composite.GenerateComposite;
 import com.patterns.demo.adapter.model.GarageTool;
 import com.patterns.demo.decorator.service.GarageService;
 import com.patterns.demo.factory.VehicleFactoryImplementation;
+import com.patterns.demo.fluentbuilder.GenerateFluentBuilder;
 import com.patterns.demo.prototype.model.GeneratePrototype;
 import com.patterns.demo.proxy.VehicleSound;
 import com.patterns.demo.proxy.model.VehicleSoundImpl;
@@ -103,5 +104,10 @@ public class PatternsController {
 	@GetMapping("/singleton")
 	public ResponseEntity<?> singleton(){
 		return ResponseEntity.ok(new SingletonGenerator().generate());
+	}
+	
+	@GetMapping("/fluent-builder")
+	public ResponseEntity<?> fluentBuilder(){
+		return ResponseEntity.ok(new GenerateFluentBuilder().generate());
 	}
 }
