@@ -27,6 +27,14 @@ Crea nuevos objetos de otros existentes usando _clone_.
 
 Asegura que se crea únicamente una instance de un objeto.
 
+Existen varias maneras de implementar Singleton:
+
+1. Método tradicional.
+2. Método sincronizado.
+3. Variable estática final.
+4. Mediante clase inner.
+5. Mediante _enum_.
+
 ## Patrones de diseño de ESTRUCTURA
 
 ### **Adaptador**
