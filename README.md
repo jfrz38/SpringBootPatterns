@@ -10,7 +10,10 @@ Permite la creación de objetos sin especificar el tipo concreto.
 
 ### **Builder**
 
-Utilizado para crear objetos complejos.
+Utilizado para crear objetos complejos.  
+
+Utilizado cuando existen muchos constructores sobrecargados.  
+Una opción es crear un único constructor y llamar a los _setters_ necesarios. Otra usar el patrón Builder.
 
 ### **Factoría**
 
