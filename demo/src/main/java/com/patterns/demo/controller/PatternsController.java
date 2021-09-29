@@ -24,6 +24,7 @@ import com.patterns.demo.factory.VehicleFactoryImplementation;
 import com.patterns.demo.prototype.model.GeneratePrototype;
 import com.patterns.demo.proxy.VehicleSound;
 import com.patterns.demo.proxy.model.VehicleSoundImpl;
+import com.patterns.demo.singleton.SingletonGenerator;
 
 @RestController
 @RequestMapping("/pattern")
@@ -97,5 +98,10 @@ public class PatternsController {
 	@GetMapping("/builder")
 	public ResponseEntity<?> builderFactory(){
 		return ResponseEntity.ok(new GenerateBuilder().generate());
+	}
+	
+	@GetMapping("/singleton")
+	public ResponseEntity<?> singleton(){
+		return ResponseEntity.ok(new SingletonGenerator().generate());
 	}
 }
