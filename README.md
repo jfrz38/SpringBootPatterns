@@ -66,7 +66,7 @@ Crea nuevos objetos de otros existentes usando _clone_.
 - Añade y elimina objetos en tiempo de ejecución.
 - Simplifica y puede optimizar los casos de uso donde múltiples objetos del mismo tipo tengan los mismos datos.
 
-**Generalmente utilizado para:**
+**Generalmente utilizado para:**  
 Para eliminar código repetitivo cuando la configuración requerida para un objeto es pesada.
 
 ### **Singleton**
@@ -87,7 +87,7 @@ Existen varias maneras de implementar Singleton:
 - Ahorra heaps de memoria.
 - Es un diseño muy eficiente para entornos multihilo.
 
-**Generalmente utilizado para:**
+**Generalmente utilizado para:**  
 Casos en los que quieras inicar un objeto una única vez. Normalmente para las creaciones de BDs.
 
 ## **Patrones de diseño de ESTRUCTURA**
@@ -101,7 +101,7 @@ Permite que dos clases incompatibles trabajen bajo una misma interfaz, convierti
 - Permite comunicar e interactuar con dos o más objetos incompatibles.
 - Permite la reusabilidad de antiguas funcionalidades existentes en el sistema.
 
-**Generalmente utilizado para:**
+**Generalmente utilizado para:**  
 Cuando se trabaja con interfaces distintas pero con similar comportamiento.
 
 ### **Bridge**
@@ -114,7 +114,7 @@ Desacopla una abstracción de su implementación, por lo que dos clases pueden s
 - Proporciona la flexibilidad necesaria para cambiar entre dos tipos de clases sin efectos secundarios.
 - Permite esconder los detalles de implementación utilizando abstracción entre ellos.
 
-**Generalmente utilizado para:**
+**Generalmente utilizado para:**  
 Cuando se quiere cambiar el siguiente comportamiento:
 
 ```bash
@@ -143,7 +143,7 @@ Permite crear estructuras complejas compuestas de otras más pequeñas creando u
 - Hace fácil añadir nuevos tipos de componentes.
 - Proporciona flexibilidad.
 
-**Generalmente utilizado para:**
+**Generalmente utilizado para:**  
 Útil cuando se necesita tratar selectivamente un grupo de objetos que forman parte de una jerarquía como "iguales" cuando en realidad son distintos.
 
 ### **Decorator**
@@ -157,16 +157,36 @@ Añade funcionalidad dinámicamente a un objeto.
 - Utiliza la composición para la relación de objetos para mantener los principios SOLID.
 - Simplifica la codificación al escribir nuevas clases para cada nueva funcionalidad específica en vez de cambiar el código existente.
 
-**Generalmente utilizado para:**
+**Generalmente utilizado para:**  
 Extender las funcionalidades de un objeto existente.
 
 ### **Proxy**
 
-Añade una interfaz para controlar las restricciones de acceso a un objeto.
+Añade una interfaz para controlar las restricciones de acceso a un objeto.  
 
 **Los beneficios son:**
 
-**Generalmente utilizado para:**
+- Se oculta el objeto del resto del mundo.
+- Puede mejorar el rendimiento porque se crean objetos bajo demanda.
+
+**Generalmente utilizado para:**  
+Cuando se tienen acciones con un coste de ejecución elevado y no se quieren realizar las acciones asociadas al objeto.
+
+Por ejemplo, un programa que muestra al usuario las fotos que existen en un directorio. Con el patrón proxy se crea el objeto `Imagen` pero no se cargan de memoria, sino que se carga únicamente la deseada.
+
+```java
+// Suponiendo que un usuario selecciona 3 imágenes de una carpeta, se crean
+// 3 objetos Image
+Image highResolutionImage1 = new ImageProxy("sample/veryHighResPhoto1.jpeg");
+Image highResolutionImage2 = new ImageProxy("sample/veryHighResPhoto2.jpeg");
+Image highResolutionImage3 = new ImageProxy("sample/veryHighResPhoto3.jpeg");
+
+// Para cargar una única imagen en memoria se carga el objeto a través
+// de un proxy y se llama al método del objeto que se desea.
+// De esta manera se ha cargado únicamente una única imagen en memoria
+// en lugar de las 3.
+highResolutionImage1.showImage();
+```
 
 ### **Facade**
 
@@ -181,7 +201,7 @@ Facade oculta la complejidad del sistema y proporciona una interfaz al cliente d
 - Reduce la complejidad del cliente para interaccionar con los subsistemas.
 - Agrupa todos los servicios en interfaces para hacerlos más entendibles.
 
-**Generalmente utilizado para:**
+**Generalmente utilizado para:**  
 Cuando una clase contiene múltiples subclases. Normalmente, cuando se realizan múltiples llamadas a distintos métodos con una misma funcionalidad, se pueden guardar todos ellos tras una "fachada". Por ejemplo, si para una acción como "encender coche" y "apagar coche" requiere hacer:
 
 ```java
@@ -211,22 +231,28 @@ facade.apagar();
 
 **Los beneficios son:**
 
-**Generalmente utilizado para:**
+**Generalmente utilizado para:**  
 
 ### **Iterator**
 
+Proporciona una forma de acceder a un conjunto de elementos secuencialmente sin exponer la capa de representación.
+
 **Los beneficios son:**
 
-**Generalmente utilizado para:**
+- Facilidad para acceder a los objetos de una colección.
+- Proporciona una interfaz uniforme a través de diferentes estructuras en una colección.
+
+**Generalmente utilizado para:**  
+Cuando la colección de objetos tiene una estructura de datos compleja pero se quiere ocultar esta complejidad al cliente.
 
 ### **Observer**
 
 **Los beneficios son:**
 
-**Generalmente utilizado para:**
+**Generalmente utilizado para:**  
 
 ### **Visitor**
 
 **Los beneficios son:**
 
-**Generalmente utilizado para:**
+**Generalmente utilizado para:**  
