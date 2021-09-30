@@ -247,11 +247,25 @@ Cuando la colección de objetos tiene una estructura de datos compleja pero se q
 
 ### **Observer**
 
+Define una dependencia uno-a-muchas entre objetos por lo que cuando un objeto cambia su estado, todos sus dependientes son notificados y actualizados automáticamente.
+
+**Los beneficios son:**
+
+- Proporciona relación desacoplada entre el objeto y el observador.
+- Proporciona apoyo para el broadcasting.
+
+**Generalmente utilizado para:**  
+Cuando tienes una clase que es monitorizada por otra clase. Es decir, cuando hay cambios en el estado de un objeto que se quieran propagar al resto del programa (por ejemplo, notificaciones).
+
+Cuando mútliples entidades están interesadas en alguna posible actualización de otra entidad en particular.
+
+### **Visitor**
+
 **Los beneficios son:**
 
 **Generalmente utilizado para:**  
 
-### **Visitor**
+### **Template**
 
 **Los beneficios son:**
 
