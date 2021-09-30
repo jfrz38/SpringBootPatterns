@@ -227,12 +227,6 @@ facade.apagar();
 
 ## **Patrones de diseño de COMPORTAMIENTO**
 
-### **Interpreter**
-
-**Los beneficios son:**
-
-**Generalmente utilizado para:**  
-
 ### **Iterator**
 
 Proporciona una forma de acceder a un conjunto de elementos secuencialmente sin exponer la capa de representación.
@@ -259,13 +253,26 @@ Cuando tienes una clase que es monitorizada por otra clase. Es decir, cuando hay
 
 Cuando mútliples entidades están interesadas en alguna posible actualización de otra entidad en particular.
 
+### **Template**
+
+Define el esqueleto de un algoritmo en la superlase pero permite que las subclases sobreescriban pasos del algoritmo sin modificar su estructura.
+
+**Los beneficios son:**
+
+- Reduce código repetitivo al reutilizar código.
+- El algoritmo crea una plantilla para reutilizar diferentes algoritmos similares.
+
+**Generalmente utilizado para:**  
+Cuando quieres permitir al cliente que extienda únicamente pasos particulares de un algoritmo, pero no todo el algoritmo completo.  
+Cuando se tienen muchas clases que contengan algoritmos casi idénticos pero con diferencias mínimas.
+
 ### **Visitor**
 
 **Los beneficios son:**
 
 **Generalmente utilizado para:**  
 
-### **Template**
+### **Interpreter**
 
 **Los beneficios son:**
 
