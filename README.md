@@ -268,9 +268,14 @@ Cuando se tienen muchas clases que contengan algoritmos casi idénticos pero con
 
 ### **Visitor**
 
+Permite separar algoritmos de los objetos sobre los que operan. Describe una forma de añadir nuevas operaciones a las estructuras de los objetos existentes sin modificar dichas estructuras.
+
 **Los beneficios son:**
 
+- Separar la estructura de datos de las operaciones.
+
 **Generalmente utilizado para:**  
+Cuando se necesita realizar una operación sobre todos los elementos de una compleja estrucutra de objetos (como por ejemplo un árbol).
 
 ### **Interpreter**
 
