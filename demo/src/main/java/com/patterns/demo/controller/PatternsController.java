@@ -29,6 +29,7 @@ import com.patterns.demo.prototype.model.GeneratePrototype;
 import com.patterns.demo.proxy.VehicleSound;
 import com.patterns.demo.proxy.model.VehicleSoundImpl;
 import com.patterns.demo.singleton.SingletonGenerator;
+import com.patterns.demo.template.GenerateTemplate;
 
 @RestController
 @RequestMapping("/pattern")
@@ -128,5 +129,10 @@ public class PatternsController {
 	public ResponseEntity<?> observer(){
 		new GenerateObserver().generate();
 		return ResponseEntity.ok().build();
+	}
+	
+	@GetMapping("/template")
+	public ResponseEntity<?> template(){
+		return ResponseEntity.ok(new GenerateTemplate().generate());
 	}
 }
