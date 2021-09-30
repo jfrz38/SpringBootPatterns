@@ -23,6 +23,7 @@ import com.patterns.demo.decorator.service.GarageService;
 import com.patterns.demo.facade.model.GenerateFacade;
 import com.patterns.demo.factory.VehicleFactoryImplementation;
 import com.patterns.demo.fluentbuilder.GenerateFluentBuilder;
+import com.patterns.demo.iterator.GenerateIterator;
 import com.patterns.demo.prototype.model.GeneratePrototype;
 import com.patterns.demo.proxy.VehicleSound;
 import com.patterns.demo.proxy.model.VehicleSoundImpl;
@@ -115,5 +116,10 @@ public class PatternsController {
 	@GetMapping("/facade")
 	public ResponseEntity<?> facade(){
 		return ResponseEntity.ok(new GenerateFacade().generate());
+	}
+	
+	@GetMapping("/iterator")
+	public ResponseEntity<?> iterator(){
+		return ResponseEntity.ok(new GenerateIterator().generate());
 	}
 }
