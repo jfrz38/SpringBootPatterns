@@ -276,9 +276,3 @@ Permite separar algoritmos de los objetos sobre los que operan. Describe una for
 
 **Generalmente utilizado para:**  
 Cuando se necesita realizar una operación sobre todos los elementos de una compleja estrucutra de objetos (como por ejemplo un árbol).
-
-### **Interpreter**
-
-**Los beneficios son:**
-
-**Generalmente utilizado para:**  
