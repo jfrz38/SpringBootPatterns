@@ -1,10 +1,10 @@
-# SpringBootPatterns
+# Patrones de diseño en Spring Boot
 
-Los difernetes patrones existentes se pueden dividir en:
+Los diferentes patrones existentes se pueden dividir en:
 
-## **Patrones de diseño de CREACIÓN**
+## **🏗️ Patrones de diseño de CREACIÓN**
 
-### **Factoría abstraca**
+### **➡️ Factoría abstraca**
 
 Permite la creación de objetos sin especificar el tipo concreto.
 
@@ -12,7 +12,7 @@ Se define una interfaz o clase abstracta para crear objetos dependientes relacio
 
 En la factoría abstracta, una interfaz es responsable de crear una factoría de objetos relacionados sin especificar sus clases.
 
-**Los beneficios son:**
+**✔️ Los beneficios son:**
 
 - Aporta poco acoplamiento entre las familias de componentes.
 - Aporta mayor consistencia al construir objetos a través de las aplicaciones.
@@ -22,14 +22,14 @@ Al crear una factoría, a veces se pueden querer crear un conjunto de objetos re
 
 Se puede utilizar cuando quieres personalizar la lógica inicial de objetos relacionados.
 
-### **Builder**
+### **➡️ Builder**
 
 Utilizado para crear objetos complejos paso a paso y devolver el objeto completo.  
 
 Utilizado cuando existen muchos constructores sobrecargados.  
 Una opción es crear un único constructor y llamar a los _setters_ necesarios. Otra usar el patrón Builder.
 
-**Los beneficios son:**
+**✔️ Los beneficios son:**
 
 - Proporciona aislamiento entre la construcción y la representación del objeto.
 - Permite construir el objeto en múltiples fases, teniendo así más control sobre la construcción.
@@ -38,13 +38,13 @@ Una opción es crear un único constructor y llamar a los _setters_ necesarios. 
 **Generalmente utilizado para:**  
 Es una buena elección cuando una clase tiene un método o una factoría estática con demasiados parámetros y sea difícil de manejar.
 
-### **Factoría**
+### **➡️ Factoría**
 
 Permite crear objetos sin especificar la clase.
 
 Define una interfaz para crear un objeto, pero deja a la subclase decidir qué clase inicializar.
 
-**Los beneficios son:**
+**✔️ Los beneficios son:**
 
 - Proporciona bajo acoplamiento entre componentes os clases que se relacionan haciendo use de interfaces.
 
@@ -56,11 +56,11 @@ Se utiliza cuando:
 
 1. Un objeto no sabe exáctamente qué subclases tiene que crear.
 
-### **Prototype**
+### **➡️ Prototype**
 
 Crea nuevos objetos de otros existentes usando _clone_.
 
-**Los beneficios son:**
+**✔️ Los beneficios son:**
 
 - Reduce el tiempo de crear los objetos.
 - Añade y elimina objetos en tiempo de ejecución.
@@ -69,7 +69,7 @@ Crea nuevos objetos de otros existentes usando _clone_.
 **Generalmente utilizado para:**  
 Para eliminar código repetitivo cuando la configuración requerida para un objeto es pesada.
 
-### **Singleton**
+### **➡️ Singleton**
 
 Asegura que se crea únicamente una instance de un objeto.
 
@@ -81,7 +81,7 @@ Existen varias maneras de implementar Singleton:
 4. Mediante clase inner.
 5. Mediante _enum_.
 
-**Los beneficios son:**
+**✔️ Los beneficios son:**
 
 - Proporciona control de acceso a objetos que pueden ser pesados (como conexiones a BDs).
 - Ahorra heaps de memoria.
@@ -90,13 +90,13 @@ Existen varias maneras de implementar Singleton:
 **Generalmente utilizado para:**  
 Casos en los que quieras inicar un objeto una única vez. Normalmente para las creaciones de BDs.
 
-## **Patrones de diseño de ESTRUCTURA**
+## **🧱 Patrones de diseño de ESTRUCTURA**
 
-### **Adapter**
+### **➡️ Adapter**
 
 Permite que dos clases incompatibles trabajen bajo una misma interfaz, conviertiendo la interfaz de una clase en otra interfaz que otra clase espera.
 
-**Los beneficios son:**
+**✔️ Los beneficios son:**
 
 - Permite comunicar e interactuar con dos o más objetos incompatibles.
 - Permite la reusabilidad de antiguas funcionalidades existentes en el sistema.
@@ -104,11 +104,11 @@ Permite que dos clases incompatibles trabajen bajo una misma interfaz, convierti
 **Generalmente utilizado para:**  
 Cuando se trabaja con interfaces distintas pero con similar comportamiento.
 
-### **Bridge**
+### **➡️ Bridge**
 
 Desacopla una abstracción de su implementación, por lo que dos clases pueden ser independientes.
 
-**Los beneficios son:**
+**✔️ Los beneficios son:**
 
 - Permite separar la implementación de la abstracción.
 - Proporciona la flexibilidad necesaria para cambiar entre dos tipos de clases sin efectos secundarios.
@@ -133,11 +133,11 @@ Refactorizarlo a:
 Aa(N) Ab(N)  1   2
 ```
 
-### **Composite**
+### **➡️ Composite**
 
 Permite crear estructuras complejas compuestas de otras más pequeñas creando un único objeto de un grupo de objetos.
 
-**Los beneficios son:**
+**✔️ Los beneficios son:**
 
 - Define jerarquías de clases que contienen objetos primitivos y complejos.
 - Hace fácil añadir nuevos tipos de componentes.
@@ -146,11 +146,11 @@ Permite crear estructuras complejas compuestas de otras más pequeñas creando u
 **Generalmente utilizado para:**  
 Útil cuando se necesita tratar selectivamente un grupo de objetos que forman parte de una jerarquía como "iguales" cuando en realidad son distintos.
 
-### **Decorator**
+### **➡️ Decorator**
 
 Añade funcionalidad dinámicamente a un objeto.
 
-**Los beneficios son:**
+**✔️ Los beneficios son:**
 
 - Permite extender la funcionalidad dinámicamente y estáticamente sin alterar la estructura del objeto existente.
 - Se puede añadir una nueva responsabilidad a un objeto dinámicamente.
@@ -160,11 +160,11 @@ Añade funcionalidad dinámicamente a un objeto.
 **Generalmente utilizado para:**  
 Extender las funcionalidades de un objeto existente.
 
-### **Proxy**
+### **➡️ Proxy**
 
 Añade una interfaz para controlar las restricciones de acceso a un objeto.  
 
-**Los beneficios son:**
+**✔️ Los beneficios son:**
 
 - Se oculta el objeto del resto del mundo.
 - Puede mejorar el rendimiento porque se crean objetos bajo demanda.
@@ -188,7 +188,7 @@ Image highResolutionImage3 = new ImageProxy("sample/veryHighResPhoto3.jpeg");
 highResolutionImage1.showImage();
 ```
 
-### **Facade**
+### **➡️ Facade**
 
 Proporciona una interfaz unificada a un conjunto de interfaces en un subsistema. Facade define una interfaz de alto nivel que hace el subsistema más fácil de utilizar.
 
@@ -196,7 +196,7 @@ Facade no es más que una interfaz de interfaces para simplificar las interaccio
 
 Facade oculta la complejidad del sistema y proporciona una interfaz al cliente desde la que el propio cliente puede acceder al sistema.
 
-**Los beneficios son:**
+**✔️ Los beneficios son:**
 
 - Reduce la complejidad del cliente para interaccionar con los subsistemas.
 - Agrupa todos los servicios en interfaces para hacerlos más entendibles.
@@ -225,13 +225,13 @@ facade.encender();
 facade.apagar();
 ```
 
-## **Patrones de diseño de COMPORTAMIENTO**
+## **😇 Patrones de diseño de COMPORTAMIENTO**
 
-### **Iterator**
+### **➡️ Iterator**
 
 Proporciona una forma de acceder a un conjunto de elementos secuencialmente sin exponer la capa de representación.
 
-**Los beneficios son:**
+**✔️ Los beneficios son:**
 
 - Facilidad para acceder a los objetos de una colección.
 - Proporciona una interfaz uniforme a través de diferentes estructuras en una colección.
@@ -239,11 +239,11 @@ Proporciona una forma de acceder a un conjunto de elementos secuencialmente sin 
 **Generalmente utilizado para:**  
 Cuando la colección de objetos tiene una estructura de datos compleja pero se quiere ocultar esta complejidad al cliente.
 
-### **Observer**
+### **➡️ Observer**
 
 Define una dependencia uno-a-muchas entre objetos por lo que cuando un objeto cambia su estado, todos sus dependientes son notificados y actualizados automáticamente.
 
-**Los beneficios son:**
+**✔️ Los beneficios son:**
 
 - Proporciona relación desacoplada entre el objeto y el observador.
 - Proporciona apoyo para el broadcasting.
@@ -253,11 +253,11 @@ Cuando tienes una clase que es monitorizada por otra clase. Es decir, cuando hay
 
 Cuando mútliples entidades están interesadas en alguna posible actualización de otra entidad en particular.
 
-### **Template**
+### **➡️ Template**
 
 Define el esqueleto de un algoritmo en la superlase pero permite que las subclases sobreescriban pasos del algoritmo sin modificar su estructura.
 
-**Los beneficios son:**
+**✔️ Los beneficios son:**
 
 - Reduce código repetitivo al reutilizar código.
 - El algoritmo crea una plantilla para reutilizar diferentes algoritmos similares.
@@ -266,11 +266,11 @@ Define el esqueleto de un algoritmo en la superlase pero permite que las subclas
 Cuando quieres permitir al cliente que extienda únicamente pasos particulares de un algoritmo, pero no todo el algoritmo completo.  
 Cuando se tienen muchas clases que contengan algoritmos casi idénticos pero con diferencias mínimas.
 
-### **Visitor**
+### **➡️ Visitor**
 
 Permite separar algoritmos de los objetos sobre los que operan. Describe una forma de añadir nuevas operaciones a las estructuras de los objetos existentes sin modificar dichas estructuras.
 
-**Los beneficios son:**
+**✔️ Los beneficios son:**
 
 - Separar la estructura de datos de las operaciones.
 
