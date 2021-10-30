@@ -4,7 +4,7 @@ Los diferentes patrones existentes se pueden dividir en:
 
 ## **🏗️ Patrones de diseño de CREACIÓN**
 
-### **➡️ Factoría abstraca**
+### **➡️ Factoría abstracta**
 
 Permite la creación de objetos sin especificar el tipo concreto.
 
@@ -54,7 +54,7 @@ Cuando quieres  reutilizar funcionalidad común con diferentes componentes.
 
 Se utiliza cuando:
 
-1. Un objeto no sabe exáctamente qué subclases tiene que crear.
+1. Un objeto no sabe exactamente qué subclases tiene que crear.
 
 ### **➡️ Prototype**
 
@@ -94,7 +94,7 @@ Casos en los que quieras inicar un objeto una única vez. Normalmente para las c
 
 ### **➡️ Adapter**
 
-Permite que dos clases incompatibles trabajen bajo una misma interfaz, conviertiendo la interfaz de una clase en otra interfaz que otra clase espera.
+Permite que dos clases incompatibles trabajen bajo una misma interfaz, convirtiendo la interfaz de una clase en otra interfaz que otra clase espera.
 
 **✔️ Los beneficios son:**
 
@@ -251,11 +251,11 @@ Define una dependencia uno-a-muchas entre objetos por lo que cuando un objeto ca
 **Generalmente utilizado para:**  
 Cuando tienes una clase que es monitorizada por otra clase. Es decir, cuando hay cambios en el estado de un objeto que se quieran propagar al resto del programa (por ejemplo, notificaciones).
 
-Cuando mútliples entidades están interesadas en alguna posible actualización de otra entidad en particular.
+Cuando múltiples entidades están interesadas en alguna posible actualización de otra entidad en particular.
 
 ### **➡️ Template**
 
-Define el esqueleto de un algoritmo en la superlase pero permite que las subclases sobreescriban pasos del algoritmo sin modificar su estructura.
+Define el esqueleto de un algoritmo en la superclase pero permite que las subclases sobrescriban pasos del algoritmo sin modificar su estructura.
 
 **✔️ Los beneficios son:**
 
@@ -275,4 +275,4 @@ Permite separar algoritmos de los objetos sobre los que operan. Describe una for
 - Separar la estructura de datos de las operaciones.
 
 **Generalmente utilizado para:**  
-Cuando se necesita realizar una operación sobre todos los elementos de una compleja estrucutra de objetos (como por ejemplo un árbol).
+Cuando se necesita realizar una operación sobre todos los elementos de una compleja estructura de objetos (como por ejemplo un árbol).
